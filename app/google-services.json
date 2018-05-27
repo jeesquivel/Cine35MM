@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "356213034428",
+    "firebase_url": "https://cine35mm-e9639.firebaseio.com",
+    "project_id": "cine35mm-e9639",
+    "storage_bucket": "cine35mm-e9639.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356213034428:android:1bd975739a73f050",
+        "android_client_info": {
+          "package_name": "cine35mm.companydomain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356213034428-fq42thge5rh6r703j99jb65fm5ir7i5m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cine35mm.companydomain",
+            "certificate_hash": "b7ebac59124b70a6312615b1f4567a0b004015d3"
+          }
+        },
+        {
+          "client_id": "356213034428-vs333e81ck27pdc9mvcg02njjlude454.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "356213034428-vs333e81ck27pdc9mvcg02njjlude454.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALvdsCgNexwZDfg3SCT5C35Us52FvTMco"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356213034428-vs333e81ck27pdc9mvcg02njjlude454.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "356213034428-ti6vgu6i7kv9sdlfieng67bc269h1kie.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "cine35mm.companydomain",
+                "app_store_id": "1"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
