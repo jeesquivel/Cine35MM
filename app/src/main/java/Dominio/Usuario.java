@@ -6,6 +6,16 @@ public class Usuario implements Serializable{
     private String name,email, contrasenna;
     private int isAdmin;
 
+    public int getBloqueado() {
+        return bloqueado;
+    }
+
+    public void setBloqueado(int bloqueado) {
+        this.bloqueado = bloqueado;
+    }
+
+    private int bloqueado;
+
     public Usuario(){}
 
     public Usuario(String name, String email,String contrasenna,int admin) {
@@ -13,6 +23,8 @@ public class Usuario implements Serializable{
         this.email = email;
         this.contrasenna=contrasenna;
         this.isAdmin=admin;
+        this.bloqueado=0;
+
     }
 
     public String getName() {
