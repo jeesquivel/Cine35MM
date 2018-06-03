@@ -3,27 +3,18 @@ package Dominio;
 import java.io.Serializable;
 
 public class Usuario implements Serializable{
-    private String name,email, contrasenna;
-    private int isAdmin;
-
-    public int getBloqueado() {
-        return bloqueado;
-    }
-
-    public void setBloqueado(int bloqueado) {
-        this.bloqueado = bloqueado;
-    }
-
-    private int bloqueado;
+    private String name, email, contrasenna;
+    private boolean isAdmin;
+    private boolean bloqueado;
 
     public Usuario(){}
 
-    public Usuario(String name, String email,String contrasenna,int admin) {
+    public Usuario(String name, String email, String contrasenna, boolean admin, boolean bloqueado) {
         this.name = name;
         this.email = email;
-        this.contrasenna=contrasenna;
-        this.isAdmin=admin;
-        this.bloqueado=0;
+        this.contrasenna = contrasenna;
+        this.isAdmin = admin;
+        this.bloqueado = bloqueado;
 
     }
 
@@ -43,11 +34,11 @@ public class Usuario implements Serializable{
         this.email = email;
     }
 
-    public int getIsAdmin() {
+    public boolean getIsAdmin() {
         return isAdmin;
     }
 
-    public void setIsAdmin(int isAdmin) {
+    public void setIsAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
 
@@ -57,5 +48,13 @@ public class Usuario implements Serializable{
 
     public void setContrasenna(String contrasenna) {
         this.contrasenna = contrasenna;
+    }
+
+    public boolean getBloqueado() {
+        return bloqueado;
+    }
+
+    public void setBloqueado(boolean bloqueado) {
+        this.bloqueado = bloqueado;
     }
 }

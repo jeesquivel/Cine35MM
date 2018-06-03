@@ -7,5 +7,5 @@ package Dominio;
 public class FirebaseReferences {
     final public static String TUTORIALES_REFERENCE = "tutorial";
     final public static String USUARIOS_REFERENCE = "Usuarios";
-
+    final public static String PELICULAS_REFERENCE = "Peliculas";
 }

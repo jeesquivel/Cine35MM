@@ -28,34 +28,34 @@ public class registrarUsuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_usuario);
 
-        editText_nombre=findViewById(R.id.editText_name);
+        editText_nombre = findViewById(R.id.editText_name);
         editText_contrasenna = findViewById(R.id.editText_contrasenna);
-        editText_correo=findViewById(R.id.editText_correo);
+        editText_correo = findViewById(R.id.editText_correo);
 
-        progressBar =findViewById(R.id.progressBar_login);
+        progressBar = findViewById(R.id.progressBar_login);
         progressBar.setVisibility(View.GONE);
-        mAuth= FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if (mAuth.getCurrentUser()!=null){
+        if (mAuth.getCurrentUser() != null){
 
         }
     }
 
     public void registrarUsuario(View view){
         try{
-            final String nombre=editText_nombre.getText().toString().trim();
-            final String correo= editText_correo.getText().toString().trim();
-            final String contrasenna= editText_contrasenna.getText().toString().trim();
-            mAuth.createUserWithEmailAndPassword(correo,contrasenna)
+            final String nombre = editText_nombre.getText().toString().trim();
+            final String correo = editText_correo.getText().toString().trim();
+            final String contrasenna = editText_contrasenna.getText().toString().trim();
+            mAuth.createUserWithEmailAndPassword(correo, contrasenna)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Usuario usuario= new Usuario(nombre,correo,contrasenna,0);
+                                Usuario usuario = new Usuario(nombre, correo, contrasenna,false, false);
                                 FirebaseDatabase.getInstance().getReference(FirebaseReferences.USUARIOS_REFERENCE)
                                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -66,12 +66,12 @@ public class registrarUsuarios extends AppCompatActivity {
                                         if (task.isSuccessful()){
                                             abrirLogin();
                                         }else{
-                                            Toast.makeText(registrarUsuarios.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                                            Toast.makeText(registrarUsuarios.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                         }
                                     }
                                 });
                             }else{
-                                Toast.makeText(registrarUsuarios.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                                Toast.makeText(registrarUsuarios.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -83,7 +83,7 @@ public class registrarUsuarios extends AppCompatActivity {
     }
 
     public void abrirLogin(){
-        Intent intent = new Intent(getApplicationContext(),Login.class);
+        Intent intent = new Intent(getApplicationContext(), Login.class);
         startActivity(intent);
     }
 
